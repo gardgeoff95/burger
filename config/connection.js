@@ -16,3 +16,6 @@ connection.connect(function(err){
     console.log("Connected to DB");
 
 })
+
+module.exports = connection;
+
