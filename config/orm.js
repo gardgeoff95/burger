@@ -3,9 +3,13 @@ const connection = require("../config/connection");
 
 
 var orm = {
-    selectAll : function(){
+    selectAll : function(cb){
         connection.query("SELECT * FROM burgers", function (err, data){
-            console.log(data);
+          if (err) {
+              throw err;
+
+          }  
+          cb(data);
         })
     },
     insertOne : function(name, devoured){
