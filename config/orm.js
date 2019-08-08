@@ -12,8 +12,13 @@ var orm = {
           cb(data);
         })
     },
-    insertOne : function(name, devoured){
-        connection.query(`INSERT INTO burgers (burger name, devoured) VALUES (?,?)`,[name, devoured], function(err, data){
+    insertOne : function(name, devoured, cb){
+        connection.query(`INSERT INTO burgers (burger_name, devoured) VALUES (?,?)`,[name, devoured], function(err, data){
+            if(err) {
+                throw err;
+
+            }
+            cb(data);
             
         })
     }

@@ -1,7 +1,41 @@
-<ul>
-    {{#each burger}}
-        <li>Burger : {{this.burger_name}}</li>
+<div id="container">
 
-    {{/each}}
-</ul>
+    <div id="jumbotron">
+        <div id="image">
+            <img id="hamburger" src="/assets/images/hamburger.jpg">
+        </div>
+    </div>
 
+    <div id="toEat">
+
+        <h2>Burgers to Eat</h2>
+        <ul>
+            {{#each burger}}
+            {{#unless this.devoured}}
+            <li>Burger : {{this.burger_name}}</li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+
+
+    </div>
+    <div id="eaten">
+        <h2>Burgers Eaten</h2>
+        <ul>
+            {{#each burger}}
+            {{#if this.devoured}}
+            <li> Burger : {{this.burger_name}}</li>
+            {{/if}}
+            {{/each}}
+        </ul>
+
+
+
+    </div>
+    <div id="submitDiv">
+        <input id="input" type="textbox">
+
+        <button id="submit">SUBMIT</button>
+
+    </div>
+</div>
