@@ -2,10 +2,14 @@
 input{
     height : 20px;
 }
+body{
+    text-align: center;
+}
 
-#hamburger{
-    width: 300px;
-    height: 300px;
+#burger{
+    width: 500px;
+    height: 500px;
+    margin: auto;
 }
 
 #container{

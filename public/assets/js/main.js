@@ -17,5 +17,24 @@ $(document).ready(function(){
 
             
         })
+      
     })
-})
+    $.ajax("/api/burgers", {
+        type: "GET",
+        
+    }).then(function(data){
+        console.log(data);
+        var listItem = document.createElement("li");
+        for(let i = 0; i < data.length; i++){
+            $("#toEat").append("<li>" + data[i].burgerName + "</li> <button class='burgers'>Eat</button>");
+
+        }
+        console.log(data[0]);
+
+
+
+    });
+    
+
+  
+});
